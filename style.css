@@ -95,6 +95,19 @@ h2 {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  -webkit-mask-image: linear-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .tile-pic aside {
@@ -111,12 +124,22 @@ h2 {
 
 .tile-pic figcaption {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 0;
   margin: 1rem;
   color: var(--darkgrey);
   font-size: 0.6875rem;
 }
+
+/*alternative way to create white gradient, but doesnt work with figcaption
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, var(--white), transparent);
+}*/
 
 /* ----------- // Tile Description Area // ----------- */
 
@@ -136,9 +159,11 @@ h2 {
   font-weight: 500;
   margin-block: 1rem 0;
   overflow: hidden;
-  display: -webkit-box;
+  line-clamp: 4;
+  /* Webkit properties */
+  display: -webkit-box; /* Establishes a flex container in an inline formatting context specific to WebKit-based browsers.*/
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 4; /* Specifies that the content should be limited to 4 lines. */
 }
 
 /* ----------- //// Layout //// ----------- */
