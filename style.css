@@ -1,0 +1,303 @@
+/* ----- || General || ----- */
+:root {
+  --bg: #f5f5f5;
+  --white: #fff;
+  --accent: #485fb9;
+  --dark-accent: #304ab0;
+  --black: #000;
+  --soft-black: #1f1f1f;
+  --lightgrey: #7e7e7e;
+  --superlightgrey: #d3d3d3;
+  --darkgrey: #4d4d4d;
+  --soft-white: #f3f3f3;
+  --tr-white: #ffffff9a;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-family: "Quicksand", sans-serif;
+  color: var(--soft-black);
+  padding: 2rem;
+}
+
+body {
+  margin: 0 auto;
+  background-color: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+ul,
+ol,
+li,
+legend {
+  padding: 0;
+  margin: 0;
+}
+
+/* ----- || Typo || ----- */
+
+h1,
+h2,
+h3,
+h4,
+aside {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  font-weight: 400;
+  color: var(--lightgrey);
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--soft-black);
+  font-size: 1.5rem;
+}
+
+/* ----- || Tile Layout || ----- */
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  gap: 3rem;
+  margin: 2rem;
+}
+
+/* ----- || Tiles || ----- */
+
+.shoe-tile {
+  background-color: var(--white);
+  max-width: 33%;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow) 3px 3px 16px;
+  overflow: hidden;
+}
+
+/* ----------- // Tile Picture Area // ----------- */
+
+.tile-pic {
+  position: relative;
+}
+
+.tile-pic img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.tile-pic aside {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  padding: 0.4rem 0.7rem 0.3rem 0.7rem;
+  font-size: 0.8125rem;
+  color: var(--soft-black);
+  background-color: var(--tr-white);
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+.tile-pic figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1rem;
+  color: var(--darkgrey);
+  font-size: 0.6875rem;
+}
+
+/* ----------- // Tile Description Area // ----------- */
+
+.tile-desc {
+  padding: 1rem;
+}
+
+/* ----------- /// Buying Options Form /// ----------- */
+.product-desc {
+  padding-block: 0.5rem 2rem;
+}
+
+.product-desc p {
+  color: var(--lightgrey);
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 500;
+  margin-block: 1rem 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+/* ----------- //// Layout //// ----------- */
+
+.buying-options {
+  background-color: var(--soft-white);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.3rem;
+  border-radius: 1rem;
+}
+
+.buying-options button,
+.buying-options p,
+.buying-options form {
+  grid-column: 1 / -1;
+}
+
+.buying-options p {
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.buying-options ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.3rem;
+}
+
+.buying-options ul li {
+  list-style-type: none;
+  grid-column: span 1;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.color,
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* ----------- //// Typo & Styling //// ----------- */
+
+.buying-options form {
+  font-weight: 500;
+  color: var(--lightgrey);
+  font-size: 1.1rem;
+}
+
+.buying-options form select,
+.buying-options form option {
+  font-weight: 500;
+  color: var(--soft-black);
+  font-size: 1rem;
+  min-width: 4rem;
+  border: 1px solid var(--superlightgrey);
+  padding-inline: 0.5rem;
+  padding-block: 0.1rem;
+  border-radius: 0.3rem;
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+}
+
+.buying-options button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+}
+
+.buying-options button:hover {
+  background-color: var(--dark-accent);
+}
+
+/* ----------- //// Customizing radio buttons (shoe colors) //// ----------- */
+
+.circle {
+  /* transforming the divs into circles for the color radio buttons */
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 100px;
+  background-color: var(--accent);
+  border: none;
+  cursor: pointer;
+  border: 1px solid var(--superlightgrey);
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-start) 50%,
+    var(--gradient-end) 50%
+  );
+}
+
+input[type="radio"] {
+  /*hides radio button graphics*/
+  display: none;
+}
+
+.sr-only {
+  /* property class for content that is only for screen readers */
+  font-size: 1px;
+  position: absolute;
+  top: -1000%;
+}
+
+input[type="radio"]:checked + label .circle {
+  /* adds outline to circle when radiobutton is checked */
+  outline: 2px solid var(--darkgrey);
+  outline-offset: 2px;
+}
+
+/* ----------- //// Gradient Color Property Classes //// ----------- */
+.olive-black {
+  --gradient-start: #a2b355;
+  --gradient-end: #000;
+}
+
+.blue-black {
+  --gradient-start: #65a5ff;
+  --gradient-end: #000;
+}
+
+.pink-black {
+  --gradient-start: #ff73ab;
+  --gradient-end: #000;
+}
+
+.red-white {
+  --gradient-start: rgb(201, 0, 0);
+  --gradient-end: white;
+}
+
+.black-white {
+  --gradient-start: #000;
+  --gradient-end: #fff;
+}
+
+.blue {
+  --gradient-start: #7a8aff;
+  --gradient-end: #7a8aff;
+}
+
+.red {
+  --gradient-start: rgb(201, 0, 0);
+  --gradient-end: rgb(201, 0, 0);
+}
+
+.black {
+  --gradient-start: #000000;
+  --gradient-end: #000000;
+}
