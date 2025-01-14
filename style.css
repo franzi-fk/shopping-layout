@@ -358,3 +358,10 @@ input[type="radio"]:checked + label .circle {
     margin: 0 auto;
   }
 }
+
+@media screen and (max-width: 499px) {
+  .buying-options ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
